@@ -8,6 +8,7 @@
   $logo  = wp_get_attachment_image_src($custom_logo_id,'full');
   if(has_custom_logo()){
     $img = esc_url($logo[0]);
+  }
 
 ?>
 
@@ -24,6 +25,19 @@
 }
 
 </style>
+
+<?php if(is_active_sidebar('sidebar-1')):?>
+  <div id="secondary" class="sidebar-container" role="complementary"></div>
+  <div class="widget-area">
+    <?php
+        dynamic_sidebar('sidebar-1');
+    ?>
+  </div>
+  </div>
+
+<?php endif; ?>
+  
+
 
 <div id="overlayer"></div>
   <div class="loader">
